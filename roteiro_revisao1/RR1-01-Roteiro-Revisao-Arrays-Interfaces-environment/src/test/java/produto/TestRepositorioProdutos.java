@@ -15,7 +15,7 @@ public class TestRepositorioProdutos {
 	
 	@Test
 	public void testExiste() {
-		assertNull(repositorio.existe(5));
+		assertFalse(repositorio.existe(5));
 	}
 
 	@Test
@@ -35,14 +35,42 @@ public class TestRepositorioProdutos {
 	public void testRemover() {
 		repositorio.inserir(new Produto(5,"Feijao",10.0,"Feijão carioca"));
 		repositorio.remover(5);
-		assertNull(repositorio.existe(5));
+		assertFalse(repositorio.existe(5));
 	}
 
 	@Test
 	public void testProcurar() {
-		assertNull(repositorio.procurar(5));
+		try{
+			assertNull(repositorio.procurar(5));
+		}catch(RuntimeException e){
+			assertEquals("Produto inexistente.", e.getMessage());
+		}
 		repositorio.inserir(new Produto(5,"Feijao",10.0,"Feijão carioca"));
 		assertNotNull(repositorio.procurar(5));		
 	}
+	
+	@Test
+	public void tostring(){
+		ProdutoNaoPerecivel um = new ProdutoNaoPerecivel(111, "a", 55, "rajada", "aaS");
+		ProdutoNaoPerecivel dois = new ProdutoNaoPerecivel(222, "a", 55, "rajada", "aaS");
+		ProdutoNaoPerecivel tres = new ProdutoNaoPerecivel(333, "a", 55, "rajada", "aaS");
+		ProdutoNaoPerecivel quatro = new ProdutoNaoPerecivel(444, "a", 55, "rajada", "aaS");
+		ProdutoNaoPerecivel cinco = new ProdutoNaoPerecivel(555, "a", 55, "rajada", "aaS");
 
+		repositorio.inserir(um);
+		repositorio.inserir(dois);
+		repositorio.inserir(tres);
+		repositorio.inserir(quatro);
+		repositorio.inserir(cinco);
+		repositorio.inserir(tres);
+		
+		assertEquals("[Codigo: 111, Codigo: 222, Codigo: 333, Codigo: 444, Codigo: 555, Codigo: 333]",
+				repositorio.toString());
+		
+		repositorio.remover(222);
+		repositorio.remover(333);
+		
+		assertEquals("[Codigo: 111, Codigo: 444, Codigo: 555, Codigo: 333]",
+				repositorio.toString());
+	}
 }

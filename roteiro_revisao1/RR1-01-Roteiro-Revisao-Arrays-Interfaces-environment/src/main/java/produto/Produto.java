@@ -1,5 +1,5 @@
 package produto;
-//registro
+
 public class Produto {
 
 	private int codigo;
@@ -53,11 +53,20 @@ public class Produto {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		boolean result = false;
 		if (obj instanceof Produto) {
-			result = this.codigo == ((Produto) obj).getCodigo();
+			Produto outro = (Produto) obj;
+			if(outro.getCodigo() == this.getCodigo()){
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return false;
 		}
-		return result;
+	}
+	
+	public String toString(){
+		return "Codigo: " + this.getCodigo();
 	}
 
 }
