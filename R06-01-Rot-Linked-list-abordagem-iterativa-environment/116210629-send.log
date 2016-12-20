@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<head/><log>
+<record>
+  <date>2016-12-14T16:09:12.471-0300</date>
+  <logger>TIAGO LIMA PEREIRA</logger>
+  <level>FINE</level>
+  <message>File 116210629-TIAGO LIMA PEREIRA.zip was received. It was sent by TIAGO LIMA PEREIRA from IP 127.0.1.1</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-12-14T23:59:17.313-0300</date>
+  <logger>TIAGO LIMA PEREIRA</logger>
+  <level>FINE</level>
+  <message>File 116210629-TIAGO LIMA PEREIRA.zip was received. It was sent by TIAGO LIMA PEREIRA from IP 127.0.1.1</message>
+</record>
