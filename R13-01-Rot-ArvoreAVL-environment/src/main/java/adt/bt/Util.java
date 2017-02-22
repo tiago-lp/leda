@@ -15,7 +15,7 @@ public class Util {
 
 		node.setRight(right.getLeft());
 		right.setLeft(node);
-		
+
 		if (node.getParent() != null) {
 			if (!node.getParent().isEmpty() && !node.getParent().getLeft().isEmpty()
 					&& node.getParent().getLeft().getData().equals(node.getData())) {
